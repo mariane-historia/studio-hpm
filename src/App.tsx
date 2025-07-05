@@ -1,22 +1,25 @@
 import './App.css';
 import FolderDiv from './FolderDiv';
 import cosmos1 from './assets/cosmos1.png';
+import bg2 from './assets/bg2.jpg';
 
 function App() {
+
   return (
     <>
       <div className="w-screen h-screen">
-        <div className="mt-4 mb-6">
+        <div className=" bg-[url('./assets/bg1.jpg')] bg-cover bg-center">
           {/* NAVBAR */}
-          <div className="w-[80%] h-12 rounded-2xl bg-[rgba(189,189,189,0.3)] m-auto flex items-center justify-between px-6">
+          <div className="w-[80%] h-12 rounded-2xl bg-[rgba(189,189,189,0.3)] m-auto flex items-center justify-between px-6 sticky top-5 z-100">
             <div className="font-semibold text-sm tracking-wider">STUDIO HPM+</div>
             <div className="flex flex-row justify-center gap-12">
-              <span className="cursor-pointer text-xs font-medium hover:text-[#FFFFFF]">HOME</span>
-              <span className="cursor-pointer text-xs font-medium hover:text-[#FFFFFF]">SERVICES</span>
-              <span className="cursor-pointer text-xs font-medium hover:text-[#FFFFFF]">PORTFOLIO</span>
-              <span className="cursor-pointer text-xs font-medium hover:text-[#FFFFFF]">CONTACT</span>
-              <span className="cursor-pointer text-xs font-medium hover:text-[#FFFFFF]">BLOG</span>
+              <span className="hover-scale">HOME</span>
+              <span className="hover-scale">SERVICES</span>
+              <span className="hover-scale">PORTFOLIO</span>
+              <span className="hover-scale">CONTACT</span>
+              <span className="hover-scale">BLOG</span>
             </div>
+            
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 35 35">
                 <path
@@ -26,21 +29,30 @@ function App() {
               </svg>
             </div>
           </div>
-          <div className="mt-[8rem] mb-[6rem] font-semibold text-5xl tracking-[20px]">STUDIO HPM+</div>
-          {/* GRID 2 COLUMN 1 ROW */}
-          <div className="grid grid-cols-2 gap-4 w-screen border border-white">
-            <div className="relative mt-[-20rem] x-20 w-[57rem] h-[45rem] overflow-hidden mask-b-from-90% mask-b-to-98%">
+          {/* HERO SECTION */}
+          <div className="py-[10rem] font-semibold text-5xl tracking-[20px]">STUDIO HPM+</div>
+          <div className="grid grid-cols-2 gap-4 w-screen">
+            <div className="relative mt-[-24rem] z-1 x-20 w-[70rem] h-[60rem] overflow-hidden mask-b-from-80% mask-b-to-98%">
               <img src={cosmos1} alt="Cosmos Render" className="w-full h-full object-cover" />
             </div>
-            <div className="flex flex-col mt-[4rem] items-center bg-transparent ms-[4rem] border border-white">
-              <h2 className="tracking-[3px] text-3xl font-semibold mb-2 uppercase">Visualize Before You Build</h2>
-              <p className="mt-3 text-lg w-[73%] mx-auto text-justify leading-[30px]">Dream in 3D. Build with certainty. Our renders bridge the gap between imagination and reality.</p>
-              <div className="mt-10 w-fit px-8 h-10 rounded-xl bg-[rgba(189,189,189,0.3)] flex items-center justify-center text-center text-[#E1FF01] font-medium">Book a Free Consult</div>
+            <div className="flex flex-col mt-[6rem] items-center bg-transparent ms-[2rem]">
+              <h2 className="hero-appear hover-scale tracking-[3px] text-4xl font-semibold mb-2 uppercase">Visualize Before You Build</h2>
+              <p className="hero-appear hover-scale mt-3 text-lg w-[70%] mx-auto text-justify z-2 leading-[35px]">Dream in 3D. Build with certainty. Our renders bridge the gap between imagination and reality.</p>
+              <div className="hover-scale text-base hover:text-whitemt-14 w-fit px-8 h-10 rounded-xl bg-[rgba(189,189,189,0.3)] flex items-center justify-center text-center text-[#E1FF01] font-medium">
+                Book a Free Consult
+                <span className="relative flex size-3 -top-4 -right-8 -ml-3">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex size-3 rounded-full bg-[#E1FF01]"></span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-screen mt-[-5rem] mb-6 z-10">
-          <FolderDiv fill="#BDBDBD" />
+        <div className="w-screen mt-[-6.4rem] z-20">
+          <FolderDiv bgImage={bg2} patternId="folder-bg-1" />
+        </div>
+        <div className="w-screen mt-[-5rem] mask-b-from-80% mb-6 z-20">
+          <FolderDiv bgImage={bg2} patternId="folder-bg-1" />
         </div>
       </div>
     </>
