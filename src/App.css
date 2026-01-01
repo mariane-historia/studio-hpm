@@ -1,30 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 @layer base {
   html {
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
 #root {
-  text-align: center;
+  text-align: left;
 }
-
-/* @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-} */
 
 .folder-shape {
   width: 300px;
@@ -33,20 +23,115 @@
 
 @layer components {
   .hover-scale {
-    @apply cursor-pointer text-xs font-medium hover:scale-110 hover:text-[#FFFFFF] transition duration-300 ease-in-out;
+    @apply cursor-pointer text-sm md:text-base font-medium hover:scale-110 hover:text-[#E1FF01] transition-all duration-300 ease-in-out;
   }
 }
+
 @keyframes appear {
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateY(0);
   }
 }
 
 .hero-appear {
-  animation: appear 2s ease-out;
+  animation: appear 1s ease-out;
+}
+
+/* Improved text readability */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.text-shadow-lg {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Better contrast for text on images */
+.text-backdrop {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #E1FF01;
+  outline-offset: 2px;
+}
+
+/* Improved button styles */
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Better line heights for readability */
+p {
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E1FF01;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cce600;
 }
