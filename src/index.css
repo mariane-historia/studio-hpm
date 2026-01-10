@@ -81,11 +81,11 @@ button {
   transition: all 0.2s ease;
 }
 
-button:focus,
+/* button:focus,
 button:focus-visible {
   outline: 2px solid #E1FF01;
   outline-offset: 2px;
-}
+} */
 
 /* Improved contrast for better readability */
 .text-white {
@@ -125,7 +125,7 @@ button {
 /* Improved image loading */
 img {
   max-width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
 

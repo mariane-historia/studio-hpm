@@ -11,6 +11,7 @@ type Testimonial = {
 export const TestimonialSlider = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
 
   useEffect(() => {
     const mockData: Testimonial[] = [
@@ -91,6 +92,22 @@ export const TestimonialSlider = () => {
             <p className="font-semibold text-white">- {testimonial.companyName}</p>
           </div>
         ))}
+      </div>
+
+      {/* Carousel Section */}
+      <div className="relative w-full max-w-4xl mx-auto">
+        
+        {/* Dots */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+          {testimonials.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              className={`w-3 h-3 rounded-full ${currentSlide === idx ? 'bg-white' : 'bg-white/30'}`}
+              onClick={() => setCurrentSlide(idx)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

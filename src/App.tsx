@@ -106,7 +106,7 @@ function App() {
           {/* Email Icon - Desktop Only */}
           <div className="hidden md:block">
             <a
-              href="mailto:info@studiohpm.com"
+              href="mailto:studiohpmplus@gmail.com"
               className="text-[#E1FF01] hover:text-white transition-colors"
               aria-label="Email us"
             >
@@ -183,16 +183,19 @@ function App() {
               <p className="hero-appear text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl drop-shadow-md">
                 Dream in 3D. Build with certainty. Our renders bridge the gap between imagination and reality.
               </p>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="hero-appear group relative px-32 py-14 bg-black/90 backdrop-blur-sm text-[#E1FF01] font-bold rounded-xl hover:bg-black transition-all duration-300 transform hover:scale-110 shadow-2xl shadow-[#E1FF01]/40 flex items-center gap-4 border-4 border-[#E1FF01] ring-4 ring-[#E1FF01]/50 ring-offset-2 ring-offset-black/50 text-xl"
+              <a
+                href="mailto:studiohpmplus@gmail.com"
+                className="hero-appear group relative bg-black/90 backdrop-blur-sm text-[#E1FF01] font-bold rounded-2xl hover:bg-black transition-all duration-300 transform hover:scale-110 shadow-2xl shadow-[#E1FF01]/40 flex items-center gap-4 border-2 border-[#E1FF01] ring-offset-black/50 text-xl"
               >
-                <span className="px-4">Book a Free Consult</span>
-                <span className="relative flex size-3">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E1FF01] opacity-75"></span>
-                  <span className="relative inline-flex size-3 rounded-full bg-[#E1FF01]"></span>
-                </span>
-              </button>
+                <span className="px-5 py-3">Book a Free Consult</span> 
+                <div className='pr-4'>
+                  <span className="relative flex size-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E1FF01] opacity-75"></span>
+                    <span className="relative inline-flex size-3 rounded-full bg-[#E1FF01]"></span>
+                  </span>
+                </div>
+              </a>
+                
             </div>
           </div>
         </section>
@@ -263,9 +266,9 @@ function App() {
             <div className="flex justify-center">
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-32 py-14 bg-black/90 backdrop-blur-sm text-[#E1FF01] font-bold rounded-xl hover:bg-black transition-all duration-300 transform hover:scale-110 shadow-2xl shadow-[#E1FF01]/40 text-xl border-4 border-[#E1FF01] ring-4 ring-[#E1FF01]/30 ring-offset-2 ring-offset-black flex items-center gap-4"
+                className=" bg-black/90 backdrop-blur-sm text-[#E1FF01] font-bold rounded-2xl hover:bg-black transition-all duration-300 transform hover:scale-110 shadow-2xl shadow-[#E1FF01]/40 text-xl border-4 border-[#E1FF01] ring-4 ring-[#E1FF01]/30 ring-offset-2 ring-offset-black flex items-center gap-4"
               >
-                <span className="px-4">Get Started Today</span>
+                <span className="px-5 py-3">Get Started Today</span>
               </button>
             </div>
           </div>
