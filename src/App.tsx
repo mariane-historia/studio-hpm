@@ -24,6 +24,135 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Add structured data (JSON-LD) for SEO
+  useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://studiohpm.com/#organization",
+          "name": "Studio HPM+",
+          "url": "https://studiohpm.com",
+          "logo": "https://studiohpm.com/logo.png",
+          "description": "Professional 3D rendering services for architecture, interior design, and custom furniture layouts.",
+          "email": "studiohpmplus@gmail.com",
+          "telephone": "+63-919-072-9684",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cebu City",
+            "addressRegion": "Cebu",
+            "addressCountry": "Philippines"
+          },
+          "sameAs": [
+            "https://www.facebook.com/studiohpm",
+            "https://www.instagram.com/studiohpm/",
+            "https://www.linkedin.com/company/studiohpm/"
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://studiohpm.com/#localbusiness",
+          "name": "Studio HPM+",
+          "image": "https://studiohpm.com/logo.png",
+          "description": "Professional 3D rendering services specializing in architectural visualization, interior design, and custom furniture layouts.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cebu City",
+            "addressRegion": "Cebu",
+            "addressCountry": "Philippines"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "10.3157",
+            "longitude": "123.8854"
+          },
+          "url": "https://studiohpm.com",
+          "telephone": "+63-919-072-9684",
+          "priceRange": "$$",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "3D Rendering",
+          "provider": {
+            "@id": "https://studiohpm.com/#organization"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Philippines"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "3D Rendering Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Architectural Visualization",
+                  "description": "Photorealistic 3D renderings of architectural exteriors and building designs"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Interior Design Rendering",
+                  "description": "Detailed 3D visualizations of interior spaces, including kitchens, living rooms, bathrooms, and more"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Furniture Design",
+                  "description": "Custom furniture design and 3D visualization services"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://studiohpm.com/#website",
+          "url": "https://studiohpm.com",
+          "name": "Studio HPM+",
+          "description": "Professional 3D rendering services for architecture, interior design, and custom furniture",
+          "publisher": {
+            "@id": "https://studiohpm.com/#organization"
+          },
+          "inLanguage": "en-US"
+        }
+      ]
+    };
+
+    // Remove existing structured data script if present
+    const existingScript = document.getElementById('structured-data');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Add structured data script
+    const script = document.createElement('script');
+    script.id = 'structured-data';
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      const scriptToRemove = document.getElementById('structured-data');
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -39,8 +168,10 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-[url('./assets/bg1.jpg')] bg-cover bg-center bg-fixed">
-        {/* NAVBAR */}
-        <nav
+        {/* HEADER */}
+        <header>
+          {/* NAVBAR */}
+          <nav
           className={`w-[95%] md:w-[90%] lg:w-[80%] h-14 md:h-16 rounded-2xl m-auto flex items-center justify-between px-4 md:px-6 sticky top-4 z-50 transition-all duration-300 ${
             isScrolled
               ? 'bg-black/90 backdrop-blur-md shadow-lg'
@@ -157,7 +288,10 @@ function App() {
             </div>
           </div>
         )}
+        </header>
 
+        {/* MAIN CONTENT */}
+        <main>
         {/* HERO SECTION */}
         <section id="home" className="flex flex-col justify-center items-center px-4 pt-12 md:pt-16 pb-4">
           <div className="text-center mb-8 md:mb-10">
@@ -170,7 +304,7 @@ function App() {
             <div className="relative w-full rounded-lg overflow-hidden shadow-2xl">
               <img
                 src={heroImage}
-                alt="3D Rendering Showcase"
+                alt="Studio HPM+ 3D architectural rendering showcase - Photorealistic visualization of modern building design"
                 className="w-full h-auto object-contain"
                 loading="eager"
               />
@@ -242,7 +376,7 @@ function App() {
               <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
                 <img
                   src={cosmos2}
-                  alt="3D Rendering Services"
+                  alt="Studio HPM+ 3D rendering services - Professional architectural visualization and interior design rendering"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -291,6 +425,8 @@ function App() {
             </div>
           </FolderDiv>
         </section>
+
+        </main>
 
         {/* FOOTER */}
         <Footer />

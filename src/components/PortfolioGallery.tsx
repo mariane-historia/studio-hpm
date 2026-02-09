@@ -14,7 +14,6 @@ import backplate from '../assets/BACKPLATE.jpg';
 import backplate1 from '../assets/BACKPLATE1.jpg';
 import backplate2 from '../assets/BACKPLATE2.jpg';
 import cosmos2 from '../assets/cosmos2.png';
-import bg2 from '../assets/bg2.jpg';
 // Exterior Images
 import ext01 from '../assets/01.jpg';
 import ext02 from '../assets/02.jpg';
@@ -23,8 +22,6 @@ import ext04 from '../assets/04.jpg';
 import ext4 from '../assets/4.jpg';
 import ext10001 from '../assets/10001.jpg';
 import vanDuyne from '../assets/VAN DUYNE.jpg';
-import bg1 from '../assets/bg1.jpg';
-import bg4 from '../assets/bg4.jpg';
 // Furniture Images
 import furnitureV1 from '../assets/V1.jpg';
 import furnitureV2 from '../assets/V2.jpg';
@@ -106,14 +103,14 @@ const portfolioItems: PortfolioItem[] = [
     id: 10,
     image: lifestyle,
     title: 'Lifestyle View',
-    category: 'Interior',
+    category: 'Furniture',
     description: 'Lifestyle interior rendering',
   },
   {
     id: 11,
     image: backplate,
     title: 'Interior Backplate',
-    category: 'Interior',
+    category: 'Furniture',
     description: 'Interior design backplate',
   },
   {
@@ -127,7 +124,7 @@ const portfolioItems: PortfolioItem[] = [
     id: 13,
     image: backplate2,
     title: 'Interior Backplate 2',
-    category: 'Interior',
+    category: 'Furniture',
     description: 'Interior design rendering',
   },
   {
@@ -136,13 +133,6 @@ const portfolioItems: PortfolioItem[] = [
     title: 'Luxury Hotel Suite',
     category: 'Interior',
     description: 'Elegant hotel interior with premium finishes',
-  },
-  {
-    id: 15,
-    image: bg2,
-    title: 'Commercial Space',
-    category: 'Interior',
-    description: 'Modern commercial interior design',
   },
   // Exterior Items
   {
@@ -176,37 +166,23 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 20,
     image: ext4,
-    title: 'Residential Exterior',
-    category: 'Exterior',
-    description: 'Residential building exterior',
+    title: 'Sofa',
+    category: 'Furniture',
+    description: 'Residential furniture',
   },
   {
     id: 21,
     image: ext10001,
-    title: 'Exterior View 10001',
-    category: 'Exterior',
-    description: 'Architectural exterior rendering',
+    title: 'Sofa',
+    category: 'Furniture',
+    description: 'Mandaue Foam Sofa',
   },
   {
     id: 22,
     image: vanDuyne,
     title: 'Van Duyne Project',
-    category: 'Exterior',
-    description: 'Exterior architectural visualization',
-  },
-  {
-    id: 23,
-    image: bg1,
-    title: 'Residential Complex',
-    category: 'Exterior',
-    description: 'Large-scale residential development',
-  },
-  {
-    id: 24,
-    image: bg4,
-    title: 'Resort Exterior',
-    category: 'Exterior',
-    description: 'Luxury resort exterior visualization',
+    category: 'Interior',
+    description: 'Interior architectural visualization',
   },
   // Furniture Items
   {

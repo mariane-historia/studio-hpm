@@ -31,7 +31,7 @@ export const TestimonialSlider = () => {
     id: 3,
     logo: mf,
     review: 'The team delivered beyond our expectations with creative solutions.',
-    companyName: 'Prime Builders',
+    companyName: 'Mark Zeff',
   },
   {
     id: 4,
@@ -85,9 +85,6 @@ export const TestimonialSlider = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {testimonials.slice(0, 3).map((testimonial) => (
           <div key={testimonial.id} className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
-            <div className="flex justify-center mb-4">
-              <img src={testimonial.logo} alt={testimonial.companyName} className="h-16 object-contain" />
-            </div>
             <p className="text-white italic mb-4">"{testimonial.review}"</p>
             <p className="font-semibold text-white">- {testimonial.companyName}</p>
           </div>
